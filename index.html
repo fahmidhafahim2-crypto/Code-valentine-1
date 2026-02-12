@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Valentine ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #fbc2eb, #fcd5ce);
+  text-align: center;
+}
+
+.card {
+  background: white;
+  width: 90%;
+  max-width: 450px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+h2, h3 {
+  color: #d63384;
+}
+
+button {
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  margin: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.yes {
+  background-color: #ff4d88;
+  color: white;
+}
+
+.no {
+  background-color: #ddd;
+}
+
+.gift-btn {
+  background-color: #ff85a2;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+img {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="card" id="question">
+  <h2>Will you be my Valentine? 🥺❤️</h2>
+  <button class="yes" onclick="showYay()">YES 💖</button>
+  <button class="no" onclick="alert('Think again 😜')">NO 💔</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="card hidden" id="yay">
+  <h2>YAYYYYY!!! 💖🥰</h2>
+  <p>That’s the best decision ever 😘</p>
+  <h3>I LOVE YOU ❤️</h3>
+  <button class="gift-btn" onclick="showGifts()">Click here for your Valentine Gifts 🎁</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="card hidden" id="gifts">
+  <h2>Your Valentine Gifts 💝</h2>
+  <button class="gift-btn" onclick="showGift1()">🎵 Gift 1</button>
+  <button class="gift-btn" onclick="showGift2()">💌 Gift 2</button>
+  <button class="gift-btn" onclick="showGift3()">📸 Gift 3</button>
+  <br><br>
+  <button onclick="goHome()">Go Home</button>
+</div>
+
+<!-- MUSIC PAGE -->
+<div class="card hidden" id="gift1">
+  <h3>Our Love Sounds Like This 🎶</h3>
+
+  <!-- REPLACE VIDEO ID -->
+  <iframe width="100%" height="200"
+    src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+    frameborder="0" allowfullscreen>
+  </iframe>
+
+  <button onclick="backToGifts()">Back</button>
+</div>
+
+<!-- LETTER PAGE -->
+<div class="card hidden" id="gift2">
+  <h3>My Love Letter 💌</h3>
+  <p>
+    My love ❤️<br><br>
+    This is our Valentine…  
+    From our first memory to our baby,  
+    every moment with you is my favourite story.  
+    I am so grateful to call you mine.  
+    Happy Valentine’s Day 💖
+  </p>
+  <button onclick="backToGifts()">Back</button>
+</div>
+
+<!-- PHOTOS PAGE -->
+<div class="card hidden" id="gift3">
+  <h3>Our Beautiful Memories 📸</h3>
+
+  <!-- Replace with your image names -->
+  <img src="photo1.jpg">
+  <img src="photo2.jpg">
+  <img src="photo3.jpg">
+
+  <button onclick="backToGifts()">Back</button>
+</div>
+
+<script>
+function hideAll() {
+  document.getElementById("question").classList.add("hidden");
+  document.getElementById("yay").classList.add("hidden");
+  document.getElementById("gifts").classList.add("hidden");
+  document.getElementById("gift1").classList.add("hidden");
+  document.getElementById("gift2").classList.add("hidden");
+  document.getElementById("gift3").classList.add("hidden");
+}
+
+function showYay() {
+  hideAll();
+  document.getElementById("yay").classList.remove("hidden");
+}
+
+function showGifts() {
+  hideAll();
+  document.getElementById("gifts").classList.remove("hidden");
+}
+
+function showGift1() {
+  hideAll();
+  document.getElementById("gift1").classList.remove("hidden");
+}
+
+function showGift2() {
+  hideAll();
+  document.getElementById("gift2").classList.remove("hidden");
+}
+
+function showGift3() {
+  hideAll();
+  document.getElementById("gift3").classList.remove("hidden");
+}
+
+function goHome() {
+  hideAll();
+  document.getElementById("question").classList.remove("hidden");
+}
+
+function backToGifts() {
+  hideAll();
+  document.getElementById("gifts").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
